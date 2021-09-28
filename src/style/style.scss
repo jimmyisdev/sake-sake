@@ -1,0 +1,287 @@
+@import "init";
+@import "mixin";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=PT+Sans+Narrow&family=Shadows+Into+Light&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+$clr_dark: #0C090D;
+$clr_bright: #FFFFFF;
+$clr_alert: #DA332E;
+$clr_light: #FEF751;
+$clr_assist: #AA8F66;
+$font_title: 'Oswald', sans-serif;
+$font-content: 'PT Sans Narrow', sans-serif;
+$font-art: 'Shadows Into Light', cursive;
+
+.App{
+    overflow-x: hidden;
+}
+h1{
+    font-size: 1.8rem;
+    padding: .5rem;
+}
+h2{
+    font-size: 1.4rem;
+    padding: .5rem; 
+}
+span, p{
+    padding: .5rem;
+}
+
+strong{
+    color: $clr_alert;
+}
+button, li{
+    font-family: $font_content;
+}
+button{
+    margin: .5rem 1rem;
+    padding: .5rem;
+}
+li{
+    margin: .5rem;
+    align-items: center;
+}
+img{
+    width: 100%
+}
+.alert{
+    background-color: $clr_alert;
+}
+
+
+
+
+//Global---------------------------------------------------------
+.item_row{
+    @include flexR;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box{
+    @include flexC;
+    justify-items: flex-start;
+    text-align: center;
+    width: 18rem;
+    height: 25rem;
+    margin: 1rem .5rem;
+    .box_img{
+        width: 100%;
+        height: 15rem;
+        overflow: hidden;
+    }
+    .box_content{
+        width: 100%;
+    }
+}
+.smBox{
+    @include flexC;
+    min-width: 35vw;
+}
+
+.icon{
+    background-color: transparent;
+    color: #0C090D;
+}
+
+//-----------------------Nav---------------------------------------------------
+.nav{
+    @include flexR;
+    justify-content: space-between;
+    height: 15vh;
+    &_img{
+        margin: .5rem;
+        img{
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+}
+//-----------------------Main---------------------------------------------------
+.main{
+    @include flexC;
+    justify-content: center;
+    overflow-x: hidden;
+}
+//-----------------------home--------------------------------------------------------
+section{
+    @include flexC;
+    align-items: center;
+    padding: .5rem;
+    min-height: 90vh;
+    .sec_header{
+        width: 100%;
+        font-family: $font-art;
+        text-align: center;
+    }
+    .sec_body{
+        padding: .5rem;
+        @include flexC;
+        width: 100%;
+        max-width: 850px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+.info{
+    width: 100%;
+    .info_header{
+        @include flexR;
+        width: 100%;
+        font-family: $font-art;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4rem;
+ 
+    }
+    .info_content{
+        font-size: 1rem;
+        text-align: left;
+        p , span{
+            font-size: 1rem;
+            font-family: $font-content;
+        }
+        span{
+            text-decoration: underline;
+        
+        }
+    }
+}
+
+
+
+
+
+
+
+
+.about{
+    line-height: 2.5rem;
+    width: 100vw;
+    h2{
+        border-bottom: 1px solid $clr_assist;
+    }
+    b{
+        border-bottom: 8px solid $clr_light;
+    }
+    .about_box{
+            @include flexC;
+        .about_img{
+            @include flexC;
+            width: 20rem;
+            
+        }
+    }
+}
+.order{
+    position: relative;
+}
+
+.searchForm{
+    width: 25rem;
+    height: 6rem;
+    @include flexC;
+    input{
+        padding: 1rem;
+        width: 95vw;
+        max-width: 400px;
+        height: 100%;
+        font-size: 2rem;
+    }
+
+}
+.order_info{
+    position: fixed;
+    @include flexR;
+    right: 0;
+    top: 6rem;
+    z-index: 3;
+    padding: 0;
+    margin: 0;
+    &_content{
+        background-color: rgba($clr_dark, .6);
+        color: $clr_bright;
+        padding: .5rem;
+        border-radius: 1rem;
+    }
+    &_btn{
+
+        @include flexC;
+        align-items: flex-start;
+        height: 12rem;
+        button{
+            margin: 0;
+            color: $clr_alert;
+
+        }
+    }
+    
+
+}
+
+.round_display{
+    &_container{
+        width: 90%;
+        padding: .5rem;
+    }
+    &_item{
+        @include flexR;
+        justify-content: space-between;
+        padding: 0 .5rem;
+        border-bottom: 1px solid;
+        background-color: rgba($clr_dark, .1);
+    }
+}
+
+
+
+
+
+
+
+
+
+.payment{
+    
+    .payment_list{
+        width: 100%;
+        border-top: 1px solid $clr_dark;
+        h4{
+            font-size: 1.2rem;
+        }
+        span, h5{
+            font-size: 1rem
+        }
+    }
+    .list_detail{
+
+        @include flexR;
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+.wrong{
+    @include flexC;
+    img{
+        width: 15rem;
+        height: 15rem;
+    }
+}
+
+
+
+
+
+
+.footer{
+    @include flexC;
+}
